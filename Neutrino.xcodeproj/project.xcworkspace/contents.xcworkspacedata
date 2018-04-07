@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Neutrino2.xcodeproj">
+      location = "self:/Users/simonhochrein/Documents/XCode/Neutrino2/Neutrino.xcodeproj">
    </FileRef>
 </Workspace>

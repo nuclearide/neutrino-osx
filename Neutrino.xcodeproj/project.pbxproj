@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		88286F93206FD431003E7ACD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88286F92206FD431003E7ACD /* main.swift */; };
+		88A470FC20703BA7002E12E8 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A470FB20703BA7002E12E8 /* FileSystem.swift */; };
+		88A470FE20703BCD002E12E8 /* Neutrino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A470FD20703BCD002E12E8 /* Neutrino.swift */; };
+		88A4710020705CB8002E12E8 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A470FF20705CB8002E12E8 /* Window.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		88286F8F206FD431003E7ACD /* Neutrino2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Neutrino2; sourceTree = BUILT_PRODUCTS_DIR; };
+		88286F8F206FD431003E7ACD /* Neutrino */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Neutrino; sourceTree = BUILT_PRODUCTS_DIR; };
 		88286F92206FD431003E7ACD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		88286F99206FD451003E7ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88A470FB20703BA7002E12E8 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
+		88A470FD20703BCD002E12E8 /* Neutrino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neutrino.swift; sourceTree = "<group>"; };
+		88A470FF20705CB8002E12E8 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +48,7 @@
 		88286F86206FD431003E7ACD = {
 			isa = PBXGroup;
 			children = (
-				88286F91206FD431003E7ACD /* Neutrino2 */,
+				88286F91206FD431003E7ACD /* Neutrino */,
 				88286F90206FD431003E7ACD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +56,37 @@
 		88286F90206FD431003E7ACD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88286F8F206FD431003E7ACD /* Neutrino2 */,
+				88286F8F206FD431003E7ACD /* Neutrino */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88286F91206FD431003E7ACD /* Neutrino2 */ = {
+		88286F91206FD431003E7ACD /* Neutrino */ = {
 			isa = PBXGroup;
 			children = (
+				88A470FA20703B98002E12E8 /* Modules */,
 				88286F92206FD431003E7ACD /* main.swift */,
+				88A470FD20703BCD002E12E8 /* Neutrino.swift */,
+				88286F99206FD451003E7ACD /* Info.plist */,
 			);
-			path = Neutrino2;
+			path = Neutrino;
+			sourceTree = "<group>";
+		};
+		88A470FA20703B98002E12E8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				88A470FB20703BA7002E12E8 /* FileSystem.swift */,
+				88A470FF20705CB8002E12E8 /* Window.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88286F8E206FD431003E7ACD /* Neutrino2 */ = {
+		88286F8E206FD431003E7ACD /* Neutrino */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88286F96206FD431003E7ACD /* Build configuration list for PBXNativeTarget "Neutrino2" */;
+			buildConfigurationList = 88286F96206FD431003E7ACD /* Build configuration list for PBXNativeTarget "Neutrino" */;
 			buildPhases = (
 				88286F8B206FD431003E7ACD /* Sources */,
 				88286F8C206FD431003E7ACD /* Frameworks */,
@@ -77,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = Neutrino2;
+			name = Neutrino;
 			productName = Neutrino2;
-			productReference = 88286F8F206FD431003E7ACD /* Neutrino2 */;
+			productReference = 88286F8F206FD431003E7ACD /* Neutrino */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 88286F8A206FD431003E7ACD /* Build configuration list for PBXProject "Neutrino2" */;
+			buildConfigurationList = 88286F8A206FD431003E7ACD /* Build configuration list for PBXProject "Neutrino" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88286F8E206FD431003E7ACD /* Neutrino2 */,
+				88286F8E206FD431003E7ACD /* Neutrino */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +138,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A470FE20703BCD002E12E8 /* Neutrino.swift in Sources */,
+				88A470FC20703BA7002E12E8 /* FileSystem.swift in Sources */,
 				88286F93206FD431003E7ACD /* main.swift in Sources */,
+				88A4710020705CB8002E12E8 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +266,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H33556F7CD;
+				INFOPLIST_FILE = "$(SRCROOT)/Neutrino2/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Neutrino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -254,6 +278,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H33556F7CD;
+				INFOPLIST_FILE = "$(SRCROOT)/Neutrino2/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Neutrino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -262,7 +288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88286F8A206FD431003E7ACD /* Build configuration list for PBXProject "Neutrino2" */ = {
+		88286F8A206FD431003E7ACD /* Build configuration list for PBXProject "Neutrino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88286F94206FD431003E7ACD /* Debug */,
@@ -271,7 +297,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88286F96206FD431003E7ACD /* Build configuration list for PBXNativeTarget "Neutrino2" */ = {
+		88286F96206FD431003E7ACD /* Build configuration list for PBXNativeTarget "Neutrino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88286F97206FD431003E7ACD /* Debug */,

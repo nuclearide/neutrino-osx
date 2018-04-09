@@ -1,19 +1,11 @@
 import Foundation
+import JavaScriptCore
+import WebKit
 
 protocol NeutrinoModule {
-    func onMessage(_ message: NeutrinoMessage)
-}
-
-struct NeutrinoMessageArgument: Codable {
-    var string: String?
-    var number: Int?
-}
-
-struct NeutrinoMessage: Codable {
-    var seq: Int
-    var module: String
-    var method: String
-    var arguments: [NeutrinoMessageArgument]
+    var map: Dictionary<String, (NeutrinoMessage) -> String> {get set}
+    func onMessage(_ message: Dictionary<String, Any>, _ context: JSContext)
+    func onMessage(_ message: Dictionary<String, Any>, _ context: WKWebView)
 }
 
 var map: [String: NeutrinoModule] = [
@@ -21,19 +13,32 @@ var map: [String: NeutrinoModule] = [
     "Window": Window()
 ]
 
+func Response (_ seq: Int, _ data: Any) -> String {
+    do {
+        return String(data: try JSONSerialization.data(withJSONObject: [seq, data], options: []), encoding: .utf8)!
+    } catch {
+        print(error)
+    }
+    return "{}"
+}
+
+typealias NeutrinoMessage = Dictionary<String, Any>
+
 class Neutrino {
-    class func handleMessage(_ message: String) {
-        let decoder = JSONDecoder()
-        do {
-            let message = try decoder.decode(NeutrinoMessage.self, from: message.data(using: .utf8)!)
-            let method = NSSelectorFromString(message.method)
-            if(map[message.module] != nil) {
-                map[message.module]?.onMessage(message)
-            } else {
-                print("Module Not Found: "+message.module)
-            }
-        } catch {
-            print(error)
+    class func handleMessage(_ message: NeutrinoMessage, _ context: JSContext) {
+        let method = NSSelectorFromString(message["method"] as! String)
+        if(map[message["module"] as! String] != nil) {
+            map[message["module"] as! String]?.onMessage(message, context)
+        } else {
+            print("Module Not Found: "+(message["module"] as! String))
+        }
+    }
+    class func handleMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
+        let method = NSSelectorFromString(message["method"] as! String)
+        if(map[message["module"] as! String] != nil) {
+            map[message["module"] as! String]?.onMessage(message, context)
+        } else {
+            print("Module Not Found: "+(message["module"] as! String))
         }
     }
 }

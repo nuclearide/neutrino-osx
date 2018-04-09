@@ -34,10 +34,6 @@ let log: @convention(block) (JSValue) -> () = { input in
     }
 }
 
-let sendMessage: @convention(block) (String) -> Void = { message in
-    Neutrino.handleMessage(message)
-}
-
 
 @objc protocol TimerJSExport : JSExport {
     
@@ -118,14 +114,25 @@ let debug = true
 let debug = false
 #endif
 
+let jsc = JSContext()
+
+let sendMessage: @convention(block) (String) -> Void = { message in
+    do {
+        let parsedMessage = try JSONSerialization.jsonObject(with: message.data(using: .utf8)!, options: []) as! NeutrinoMessage
+        Neutrino.handleMessage(parsedMessage, jsc!)
+    } catch {
+        print(error)
+    }
+}
+
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillFinishLaunching(_ notification: Notification) {
-        let jsc = JSContext()
         
         TimerJS.registerInto(jsContext: jsc!)
-        jsc?.setObject(Console.self, forKeyedSubscript: "console" as NSString)
+        jsc?.setObject(Console.self, forKeyedSubscript: "NeutrinoConsole" as NSString)
         
         jsc?.evaluateScript("var __NEUTRINO_MESSAGE_HANDLER;")
+        jsc?.evaluateScript("var console = {log: function(...args){NeutrinoConsole.log(args)}}")
         jsc?.setObject(sendMessage, forKeyedSubscript: "__NEUTRINO_SEND_MESSAGE" as NSString)
         
         jsc?.exceptionHandler = {(ctx: JSContext!, _ value: JSValue!) in

@@ -1,11 +1,62 @@
 import Foundation
+import JavaScriptCore
+import WebKit
 
-@objc class FileSystem: NSObject, NeutrinoModule {
-    func onMessage(_ message: NeutrinoMessage) {
-        
+struct FileSystemRequest {
+    var filePath: String
+    var contents: String
+    
+    init(_ dict: Dictionary<String, Any>) {
+        filePath = dict["filePath"] as! String
+        contents = dict["contents"] as? String ?? ""
+    }
+}
+
+class FileSystem: NeutrinoModule {
+    var map: Dictionary = Dictionary<String, (NeutrinoMessage) -> String>()
+    var cwd: String = ""
+    
+    init() {
+        map["readFile"] = readFile
+        map["writeFile"] = writeFile
+        if(debug) {
+            cwd = (URL(string: CommandLine.arguments[1])?.deletingLastPathComponent().absoluteString)!
+        } else {
+            cwd = Bundle.main.bundlePath
+        }
     }
     
-    func readFile(_ message: NeutrinoMessage) {
-        print(message.arguments[0].string)
+    func onMessage(_ message: NeutrinoMessage, _ context: JSContext) {
+        context.evaluateScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
+    }
+    
+    func onMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
+        context.evaluateJavaScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
+    }
+    
+    
+    func readFile(_ message: NeutrinoMessage) -> String{
+        do {
+            let args = FileSystemRequest(message["arguments"] as! Dictionary<String, Any>)
+            let path = URL(string: args.filePath, relativeTo: URL(string: cwd))
+            return Response(message["seq"] as! Int, [try String(contentsOfFile: (path?.absoluteString)!, encoding: .utf8)])
+        } catch {
+            print(error)
+        }
+        return Response(message["seq"] as! Int, [nil, "Error"])
+    }
+    
+    func writeFile(_ message: NeutrinoMessage) -> String{
+        do {
+            let args = FileSystemRequest(message["arguments"] as! Dictionary<String, Any>)
+            let path = URL(fileURLWithPath: args.filePath, relativeTo: URL(fileURLWithPath: cwd))
+            
+            try args.contents.write(to: path, atomically: false, encoding: .utf8)
+            
+            return Response(message["seq"] as! Int, [true])
+        } catch {
+            print(error)
+        }
+        return Response(message["seq"] as! Int, [nil, "Error"])
     }
 }

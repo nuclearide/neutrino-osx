@@ -125,13 +125,13 @@ let sendMessage: @convention(block) (String) -> Void = { message in
     }
 }
 
-class AppDelegate: NSObject, NSApplicationDelegate {
+@objc class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillFinishLaunching(_ notification: Notification) {
         
         TimerJS.registerInto(jsContext: jsc!)
         jsc?.setObject(Console.self, forKeyedSubscript: "NeutrinoConsole" as NSString)
         
-        jsc?.evaluateScript("var __NEUTRINO_MESSAGE_HANDLER;")
+        jsc?.evaluateScript("var __NEUTRINO_MESSAGE_HANDLER;var __NEUTRINO_MENU_HANDLER;")
         jsc?.evaluateScript("var console = {log: function(...args){NeutrinoConsole.log(args)}}")
         jsc?.setObject(sendMessage, forKeyedSubscript: "__NEUTRINO_SEND_MESSAGE" as NSString)
         
@@ -147,6 +147,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         } catch {
             print(error)
+        }
+    }
+    @objc(handleMenu:)
+    func handleMenu(_ arg: NSMenuItem) {
+        print(arg.tag)
+        jsc?.evaluateScript("__NEUTRINO_MENU_HANDLER(\(arg.tag))");
+        NSApplication.shared.windows.forEach { (window) in
+            if(type(of: window) == NSWindow.self) {
+                let webview = window.contentView as! WKWebView
+                webview.evaluateJavaScript("__NEUTRINO_MENU_HANDLER(\(arg.tag))", completionHandler: nil)
+            }
         }
     }
 }

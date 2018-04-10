@@ -10,7 +10,8 @@ protocol NeutrinoModule {
 
 var map: [String: NeutrinoModule] = [
     "FileSystem": FileSystem(),
-    "Window": Window()
+    "Window": Window(),
+    "Menu": Menu()
 ]
 
 func Response (_ seq: Int, _ data: Any) -> String {

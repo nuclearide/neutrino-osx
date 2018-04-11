@@ -37,19 +37,11 @@ struct WindowRequest {
 }
 
 class Window: NeutrinoModule {
-    var map: Dictionary = Dictionary<String, (NeutrinoMessage) -> String>();
-    init() {
+    override init() {
+        super.init()
         map["create"] = create
         map["maximize"] = maximize
         map["close"] = close
-    }
-    
-    func onMessage(_ message: NeutrinoMessage, _ context: JSContext) {
-        context.evaluateScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
-    }
-    
-    func onMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
-        context.evaluateJavaScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
     }
     
     func create(_ message: NeutrinoMessage) -> String {
@@ -68,7 +60,7 @@ class Window: NeutrinoModule {
         newWebView.load(URLRequest(url: URL(string: arguments.url)!))
         
         newWebView.configuration.userContentController.add(Handler(newWebView), name: "neutrino")
-        newWebView.configuration.userContentController.addUserScript(WKUserScript(source: "window.__NEUTRINO_SEND_MESSAGE = function(json){webkit.messageHandlers.neutrino.postMessage(json);};window.__NEUTRINO_MESSAGE_HANDLER = console.error;window.__NEUTRINO_MENU_HANDLER = console.error", injectionTime: WKUserScriptInjectionTime.atDocumentStart, forMainFrameOnly: true))
+        newWebView.configuration.userContentController.addUserScript(WKUserScript(source: "window.__NEUTRINO_SEND_MESSAGE = function(json){webkit.messageHandlers.neutrino.postMessage(json);};window.__NEUTRINO_MESSAGE_HANDLER = (...args) => {console.log(args)};window.__NEUTRINO_MENU_HANDLER = console.error;window.__NEUTRINO_BROADCAST_HANDLER = () => {}", injectionTime: WKUserScriptInjectionTime.atDocumentStart, forMainFrameOnly: true))
         
         newWindow.contentView = newWebView
         newWindow.isReleasedWhenClosed = false

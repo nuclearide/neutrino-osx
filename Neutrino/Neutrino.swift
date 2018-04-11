@@ -2,13 +2,19 @@ import Foundation
 import JavaScriptCore
 import WebKit
 
-protocol NeutrinoModule {
-    var map: Dictionary<String, (NeutrinoMessage) -> String> {get set}
-    func onMessage(_ message: Dictionary<String, Any>, _ context: JSContext)
-    func onMessage(_ message: Dictionary<String, Any>, _ context: WKWebView)
+class NeutrinoModule {
+    var map: Dictionary<String, (NeutrinoMessage) -> String> = Dictionary()
+    func onMessage(_ message: NeutrinoMessage, _ context: JSContext) {
+        context.evaluateScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
+    }
+    
+    func onMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
+        context.evaluateJavaScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
+    }
 }
 
 var map: [String: NeutrinoModule] = [
+    "App": App(),
     "FileSystem": FileSystem(),
     "Window": Window(),
     "Menu": Menu()
@@ -27,7 +33,6 @@ typealias NeutrinoMessage = Dictionary<String, Any>
 
 class Neutrino {
     class func handleMessage(_ message: NeutrinoMessage, _ context: JSContext) {
-        let method = NSSelectorFromString(message["method"] as! String)
         if(map[message["module"] as! String] != nil) {
             map[message["module"] as! String]?.onMessage(message, context)
         } else {
@@ -35,7 +40,6 @@ class Neutrino {
         }
     }
     class func handleMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
-        let method = NSSelectorFromString(message["method"] as! String)
         if(map[message["module"] as! String] != nil) {
             map[message["module"] as! String]?.onMessage(message, context)
         } else {

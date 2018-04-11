@@ -11,6 +11,7 @@
 		88A470FC20703BA7002E12E8 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A470FB20703BA7002E12E8 /* FileSystem.swift */; };
 		88A470FE20703BCD002E12E8 /* Neutrino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A470FD20703BCD002E12E8 /* Neutrino.swift */; };
 		88A4710020705CB8002E12E8 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A470FF20705CB8002E12E8 /* Window.swift */; };
+		88B9DA24207D64EE005359C5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B9DA23207D64EE005359C5 /* App.swift */; };
 		88F259FC207BEDB6009B02B3 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F259FB207BEDB6009B02B3 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		88A470FB20703BA7002E12E8 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		88A470FD20703BCD002E12E8 /* Neutrino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neutrino.swift; sourceTree = "<group>"; };
 		88A470FF20705CB8002E12E8 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		88B9DA23207D64EE005359C5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		88F259FB207BEDB6009B02B3 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		88A470FA20703B98002E12E8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				88B9DA23207D64EE005359C5 /* App.swift */,
 				88A470FB20703BA7002E12E8 /* FileSystem.swift */,
 				88A470FF20705CB8002E12E8 /* Window.swift */,
 				88F259FB207BEDB6009B02B3 /* Menu.swift */,
@@ -144,6 +147,7 @@
 				88A470FE20703BCD002E12E8 /* Neutrino.swift in Sources */,
 				88A470FC20703BA7002E12E8 /* FileSystem.swift in Sources */,
 				88286F93206FD431003E7ACD /* main.swift in Sources */,
+				88B9DA24207D64EE005359C5 /* App.swift in Sources */,
 				88A4710020705CB8002E12E8 /* Window.swift in Sources */,
 				88F259FC207BEDB6009B02B3 /* Menu.swift in Sources */,
 			);

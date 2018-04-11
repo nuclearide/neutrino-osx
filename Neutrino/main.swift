@@ -131,19 +131,26 @@ let sendMessage: @convention(block) (String) -> Void = { message in
         TimerJS.registerInto(jsContext: jsc!)
         jsc?.setObject(Console.self, forKeyedSubscript: "NeutrinoConsole" as NSString)
         
-        jsc?.evaluateScript("var __NEUTRINO_MESSAGE_HANDLER;var __NEUTRINO_MENU_HANDLER;")
-        jsc?.evaluateScript("var console = {log: function(...args){NeutrinoConsole.log(args)}}")
+        _ = jsc?.evaluateScript("var __NEUTRINO_MESSAGE_HANDLER;var __NEUTRINO_MENU_HANDLER;var __NEUTRINO_BROADCAST_HANDLER;")
+        _ = jsc?.evaluateScript("var console = {log: function(...args){NeutrinoConsole.log(args)}}")
         jsc?.setObject(sendMessage, forKeyedSubscript: "__NEUTRINO_SEND_MESSAGE" as NSString)
         
         jsc?.exceptionHandler = {(ctx: JSContext!, _ value: JSValue!) in
-            print(value)
+            // type of String
+            let stacktrace = value.objectForKeyedSubscript("stack").toString()
+            // type of Number
+            let lineNumber = value.objectForKeyedSubscript("line").toNumber()
+            // type of Number
+            let column = value.objectForKeyedSubscript("column").toNumber()
+            let moreInfo = "in method "+stacktrace!+"\nLine number in file: \(String(describing:lineNumber!)), column: \(String(describing:column!))"
+            print("JS ERROR: \n"+value.toString()+" "+moreInfo+"\n")
         }
         
         do {
             if(debug) {
-                jsc?.evaluateScript(try String(contentsOfFile: CommandLine.arguments[1]))
+                _ = jsc?.evaluateScript(try String(contentsOfFile: CommandLine.arguments[1]))
             } else {
-                jsc?.evaluateScript(try String(contentsOfFile: Bundle.main.path(forResource: "index", ofType: "js")!))
+                _ = jsc?.evaluateScript(try String(contentsOfFile: Bundle.main.path(forResource: "index", ofType: "js")!))
             }
         } catch {
             print(error)
@@ -152,7 +159,7 @@ let sendMessage: @convention(block) (String) -> Void = { message in
     @objc(handleMenu:)
     func handleMenu(_ arg: NSMenuItem) {
         print(arg.tag)
-        jsc?.evaluateScript("__NEUTRINO_MENU_HANDLER(\(arg.tag))");
+        _ = jsc?.evaluateScript("__NEUTRINO_MENU_HANDLER(\(arg.tag))");
         NSApplication.shared.windows.forEach { (window) in
             if(type(of: window) == NSWindow.self) {
                 let webview = window.contentView as! WKWebView
@@ -175,4 +182,5 @@ let sendMessage: @convention(block) (String) -> Void = { message in
 
 app.delegate = AppDelegate()
 NSApp.setActivationPolicy(NSApplication.ActivationPolicy.regular)
+NSApp.activate(ignoringOtherApps: false)
 app.run()

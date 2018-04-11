@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/simonhochrein/Documents/neutrino-test/index.js"
+            argument = "/Users/simonhochrein/Documents/neutrino-test/dist/index.js"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

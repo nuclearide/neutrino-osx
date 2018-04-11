@@ -13,10 +13,10 @@ struct FileSystemRequest {
 }
 
 class FileSystem: NeutrinoModule {
-    var map: Dictionary = Dictionary<String, (NeutrinoMessage) -> String>()
     var cwd: String = ""
     
-    init() {
+    override init() {
+        super.init()
         map["readFile"] = readFile
         map["writeFile"] = writeFile
         if(debug) {
@@ -24,14 +24,6 @@ class FileSystem: NeutrinoModule {
         } else {
             cwd = Bundle.main.bundlePath
         }
-    }
-    
-    func onMessage(_ message: NeutrinoMessage, _ context: JSContext) {
-        context.evaluateScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
-    }
-    
-    func onMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
-        context.evaluateJavaScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
     }
     
     

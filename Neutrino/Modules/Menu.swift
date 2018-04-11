@@ -22,25 +22,19 @@ func buildMenu(_ menu: Array<Any>) -> NSMenu {
         item.tag = parsedItem.id
         if(parsedItem.submenu != nil) {
             item.submenu = buildMenu(parsedItem.submenu!)
+            item.submenu?.title = parsedItem.label
         }
     }
     return m
 }
 
 class Menu: NeutrinoModule {
-    var map: Dictionary = Dictionary<String, (NeutrinoMessage) -> String>()
     
-    init() {
+    override init() {
+        super.init()
         map["setApplicationMenu"] = setApplicationMenu
     }
-    
-    func onMessage(_ message: NeutrinoMessage, _ context: JSContext) {
-        context.evaluateScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
-    }
-    
-    func onMessage(_ message: NeutrinoMessage, _ context: WKWebView) {
-        context.evaluateJavaScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
-    }
+
     
     func setApplicationMenu(_ message: NeutrinoMessage) -> String {
         let menu = message["arguments"] as! Array<Any>

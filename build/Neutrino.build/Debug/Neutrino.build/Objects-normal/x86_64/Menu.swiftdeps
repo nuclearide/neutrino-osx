@@ -1,0 +1,353 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MenuItem"
+- "buildMenu"
+- "Menu"
+provides-nominal:
+- "8Neutrino8MenuItemV"
+- "8Neutrino4MenuC"
+provides-member:
+- ["8Neutrino8MenuItemV", ""]
+- ["8Neutrino4MenuC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!="
+- !private "??"
+- "Array"
+- "AssignmentPrecedence"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "Dictionary"
+- "Int"
+- "JSContext"
+- "Menu"
+- "MenuItem"
+- !private "NSApplication"
+- "NSMenu"
+- "NeutrinoMessage"
+- "NeutrinoModule"
+- !private "Response"
+- "String"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- "WKWebView"
+- "buildMenu"
+depends-member:
+- !private ["Sa", "forEach"]
+- !private ["s23BidirectionalCollectionP", "forEach"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "addItem"]
+- !private ["s7CVarArgP", "evaluateJavaScript"]
+- !private ["s7CVarArgP", "evaluateScript"]
+- !private ["s7CVarArgP", "forEach"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "mainMenu"]
+- !private ["s7CVarArgP", "shared"]
+- !private ["s7CVarArgP", "submenu"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "tag"]
+- !private ["s10CollectionP", "forEach"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "addItem"]
+- !private ["s28CustomDebugStringConvertibleP", "evaluateJavaScript"]
+- !private ["s28CustomDebugStringConvertibleP", "evaluateScript"]
+- !private ["s28CustomDebugStringConvertibleP", "forEach"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "mainMenu"]
+- !private ["s28CustomDebugStringConvertibleP", "shared"]
+- !private ["s28CustomDebugStringConvertibleP", "submenu"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "tag"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "forEach"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "addItem"]
+- !private ["s23CustomStringConvertibleP", "evaluateJavaScript"]
+- !private ["s23CustomStringConvertibleP", "evaluateScript"]
+- !private ["s23CustomStringConvertibleP", "forEach"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "mainMenu"]
+- !private ["s23CustomStringConvertibleP", "shared"]
+- !private ["s23CustomStringConvertibleP", "submenu"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "tag"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "forEach"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "subscript"]
+- ["s10DictionaryV", "init"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "forEach"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "addItem"]
+- !private ["s9EquatableP", "evaluateJavaScript"]
+- !private ["s9EquatableP", "evaluateScript"]
+- !private ["s9EquatableP", "forEach"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "mainMenu"]
+- !private ["s9EquatableP", "shared"]
+- !private ["s9EquatableP", "submenu"]
+- !private ["s9EquatableP", "subscript"]
+- !private ["s9EquatableP", "tag"]
+- !private ["s25ExpressibleByArrayLiteralP", "forEach"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s30ExpressibleByDictionaryLiteralP", "init"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "addItem"]
+- !private ["s8HashableP", "evaluateJavaScript"]
+- !private ["s8HashableP", "evaluateScript"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "mainMenu"]
+- !private ["s8HashableP", "shared"]
+- !private ["s8HashableP", "submenu"]
+- !private ["s8HashableP", "tag"]
+- !private ["So9JSContextC", "evaluateScript"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["8Neutrino4MenuC", "Array"]
+- ["8Neutrino4MenuC", "Dictionary"]
+- ["8Neutrino4MenuC", "JSContext"]
+- !private ["8Neutrino4MenuC", "NSApplication"]
+- ["8Neutrino4MenuC", "NeutrinoMessage"]
+- !private ["8Neutrino4MenuC", "Response"]
+- ["8Neutrino4MenuC", "String"]
+- ["8Neutrino4MenuC", "WKWebView"]
+- !private ["8Neutrino4MenuC", "buildMenu"]
+- ["8Neutrino4MenuC", "deinit"]
+- ["8Neutrino4MenuC", "init"]
+- ["8Neutrino4MenuC", "map"]
+- ["8Neutrino4MenuC", "onMessage"]
+- ["8Neutrino4MenuC", "setApplicationMenu"]
+- ["8Neutrino8MenuItemV", "Array"]
+- !private ["8Neutrino8MenuItemV", "Dictionary"]
+- ["8Neutrino8MenuItemV", "Int"]
+- ["8Neutrino8MenuItemV", "String"]
+- ["8Neutrino8MenuItemV", "id"]
+- ["8Neutrino8MenuItemV", "init"]
+- ["8Neutrino8MenuItemV", "label"]
+- ["8Neutrino8MenuItemV", "submenu"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "forEach"]
+- !private ["So15NSAccessibilityP", "addItem"]
+- !private ["So15NSAccessibilityP", "evaluateJavaScript"]
+- !private ["So15NSAccessibilityP", "init"]
+- !private ["So15NSAccessibilityP", "mainMenu"]
+- !private ["So15NSAccessibilityP", "shared"]
+- !private ["So15NSAccessibilityP", "submenu"]
+- !private ["So15NSAccessibilityP", "tag"]
+- !private ["So30NSAccessibilityElementProtocolP", "addItem"]
+- !private ["So30NSAccessibilityElementProtocolP", "evaluateJavaScript"]
+- !private ["So30NSAccessibilityElementProtocolP", "init"]
+- !private ["So30NSAccessibilityElementProtocolP", "mainMenu"]
+- !private ["So30NSAccessibilityElementProtocolP", "shared"]
+- !private ["So30NSAccessibilityElementProtocolP", "submenu"]
+- !private ["So30NSAccessibilityElementProtocolP", "tag"]
+- !private ["So29NSAnimatablePropertyContainerP", "evaluateJavaScript"]
+- !private ["So25NSAppearanceCustomizationP", "evaluateJavaScript"]
+- !private ["So13NSApplicationC", "mainMenu"]
+- !private ["So13NSApplicationC", "shared"]
+- !private ["So8NSCodingP", "addItem"]
+- !private ["So8NSCodingP", "evaluateJavaScript"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "mainMenu"]
+- !private ["So8NSCodingP", "shared"]
+- !private ["So8NSCodingP", "submenu"]
+- !private ["So8NSCodingP", "tag"]
+- !private ["So9NSCopyingP", "addItem"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "submenu"]
+- !private ["So9NSCopyingP", "tag"]
+- !private ["So21NSDraggingDestinationP", "evaluateJavaScript"]
+- !private ["So6NSMenuC", "addItem"]
+- !private ["So6NSMenuC", "init"]
+- !private ["So10NSMenuItemC", "submenu"]
+- !private ["So10NSMenuItemC", "tag"]
+- !private ["So8NSObjectC", "addItem"]
+- !private ["So8NSObjectC", "evaluateJavaScript"]
+- !private ["So8NSObjectC", "evaluateScript"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "mainMenu"]
+- !private ["So8NSObjectC", "shared"]
+- !private ["So8NSObjectC", "submenu"]
+- !private ["So8NSObjectC", "tag"]
+- !private ["So16NSObjectProtocolP", "addItem"]
+- !private ["So16NSObjectProtocolP", "evaluateJavaScript"]
+- !private ["So16NSObjectProtocolP", "evaluateScript"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "mainMenu"]
+- !private ["So16NSObjectProtocolP", "shared"]
+- !private ["So16NSObjectProtocolP", "submenu"]
+- !private ["So16NSObjectProtocolP", "tag"]
+- !private ["So11NSResponderC", "evaluateJavaScript"]
+- !private ["So11NSResponderC", "mainMenu"]
+- !private ["So11NSResponderC", "shared"]
+- !private ["So18NSTouchBarProviderP", "evaluateJavaScript"]
+- !private ["So18NSTouchBarProviderP", "mainMenu"]
+- !private ["So18NSTouchBarProviderP", "shared"]
+- !private ["So33NSUserInterfaceItemIdentificationP", "addItem"]
+- !private ["So33NSUserInterfaceItemIdentificationP", "evaluateJavaScript"]
+- !private ["So33NSUserInterfaceItemIdentificationP", "init"]
+- !private ["So33NSUserInterfaceItemIdentificationP", "submenu"]
+- !private ["So33NSUserInterfaceItemIdentificationP", "tag"]
+- !private ["So26NSUserInterfaceValidationsP", "evaluateJavaScript"]
+- !private ["So26NSUserInterfaceValidationsP", "mainMenu"]
+- !private ["So26NSUserInterfaceValidationsP", "shared"]
+- !private ["So28NSValidatedUserInterfaceItemP", "submenu"]
+- !private ["So28NSValidatedUserInterfaceItemP", "tag"]
+- !private ["So6NSViewC", "evaluateJavaScript"]
+- ["8Neutrino0A6ModuleP", "Dictionary"]
+- !private ["8Neutrino0A6ModuleP", "NSApplication"]
+- !private ["8Neutrino0A6ModuleP", "Response"]
+- ["8Neutrino0A6ModuleP", ""]
+- !private ["8Neutrino0A6ModuleP", "buildMenu"]
+- ["8Neutrino0A6ModuleP", "map"]
+- ["8Neutrino0A6ModuleP", "onMessage"]
+- !private ["8Neutrino0A6ModuleP", "setApplicationMenu"]
+- !private ["s22RandomAccessCollectionP", "forEach"]
+- !private ["s26RangeReplaceableCollectionP", "forEach"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["10ObjectiveC8SelectorV", "init"]
+- !private ["s8SequenceP", "forEach"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So9WKWebViewC", "evaluateJavaScript"]
+- !private ["s14_ArrayProtocolP", "forEach"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "evaluateJavaScript"]
+- !private ["s24_DestructorSafeContainerP", "forEach"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addItem"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "evaluateJavaScript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "evaluateScript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "mainMenu"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "submenu"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "tag"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "forEach"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "Sa"
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- "s7CVarArgP"
+- "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s10DictionaryV"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s30ExpressibleByDictionaryLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s8HashableP"
+- !private "So9JSContextC"
+- !private "s25LosslessStringConvertibleP"
+- "8Neutrino4MenuC"
+- "8Neutrino8MenuItemV"
+- !private "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- !private "So15NSAccessibilityP"
+- !private "So30NSAccessibilityElementProtocolP"
+- !private "So29NSAnimatablePropertyContainerP"
+- !private "So25NSAppearanceCustomizationP"
+- !private "So13NSApplicationC"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSDraggingDestinationP"
+- !private "So6NSMenuC"
+- !private "So10NSMenuItemC"
+- !private "So8NSObjectC"
+- !private "So16NSObjectProtocolP"
+- !private "So11NSResponderC"
+- !private "So18NSTouchBarProviderP"
+- !private "So33NSUserInterfaceItemIdentificationP"
+- !private "So26NSUserInterfaceValidationsP"
+- !private "So28NSValidatedUserInterfaceItemP"
+- !private "So6NSViewC"
+- "8Neutrino0A6ModuleP"
+- !private "s22RandomAccessCollectionP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "10ObjectiveC8SelectorV"
+- "s8SequenceP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So9WKWebViewC"
+- !private "s14_ArrayProtocolP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "88ad9a1aa7fb47de92b1f53d63e9f2cb"

@@ -1,0 +1,9 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "e80a45bc33af71ffd582fc77c74bbfd3"
+build_time: [1523395467, 772970000]
+inputs:
+  "/Users/simonhochrein/Documents/GitHub/neutrino/neutrino-osx/Neutrino/Neutrino.swift": [1523395345, 0]
+  "/Users/simonhochrein/Documents/GitHub/neutrino/neutrino-osx/Neutrino/Modules/FileSystem.swift": [1523395330, 0]
+  "/Users/simonhochrein/Documents/GitHub/neutrino/neutrino-osx/Neutrino/main.swift": [1523395345, 0]
+  "/Users/simonhochrein/Documents/GitHub/neutrino/neutrino-osx/Neutrino/Modules/Window.swift": [1523395345, 0]
+  "/Users/simonhochrein/Documents/GitHub/neutrino/neutrino-osx/Neutrino/Modules/Menu.swift": [1523395345, 0]

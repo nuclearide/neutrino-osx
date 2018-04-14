@@ -18,6 +18,7 @@ class FileSystem: NeutrinoModule {
     override init() {
         super.init()
         map["readFile"] = readFile
+        map["readdir"] = readdir
         map["writeFile"] = writeFile
         if(debug) {
             cwd = (URL(string: CommandLine.arguments[1])?.deletingLastPathComponent().absoluteString)!
@@ -32,6 +33,21 @@ class FileSystem: NeutrinoModule {
             let args = FileSystemRequest(message["arguments"] as! Dictionary<String, Any>)
             let path = URL(string: args.filePath, relativeTo: URL(string: cwd))
             return Response(message["seq"] as! Int, [try String(contentsOfFile: (path?.absoluteString)!, encoding: .utf8)])
+        } catch {
+            print(error)
+        }
+        return Response(message["seq"] as! Int, [nil, "Error"])
+    }
+    
+    func readdir(_ message: NeutrinoMessage) -> String{
+        do {
+            let args = FileSystemRequest(message["arguments"] as! Dictionary<String, Any>)
+            let path = URL(string: args.filePath, relativeTo: URL(string: cwd))
+            let files = try FileManager.default.contentsOfDirectory(at: path!, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
+            let ret = files.map { (_ url: URL) -> String in
+                return url.lastPathComponent
+            }
+            return Response(message["seq"] as! Int, ret);
         } catch {
             print(error)
         }

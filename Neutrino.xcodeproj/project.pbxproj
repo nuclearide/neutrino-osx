@@ -273,7 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H33556F7CD;
 				INFOPLIST_FILE = "$(SRCROOT)/Neutrino/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Neutrino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,7 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H33556F7CD;
 				INFOPLIST_FILE = "$(SRCROOT)/Neutrino/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Neutrino;
 				PRODUCT_NAME = "$(TARGET_NAME)";

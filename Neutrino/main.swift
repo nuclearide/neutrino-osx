@@ -131,7 +131,7 @@ let sendMessage: @convention(block) (String) -> Void = { message in
         TimerJS.registerInto(jsContext: jsc!)
         jsc?.setObject(Console.self, forKeyedSubscript: "NeutrinoConsole" as NSString)
         
-        _ = jsc?.evaluateScript("var __NEUTRINO_MESSAGE_HANDLER;var __NEUTRINO_MENU_HANDLER;var __NEUTRINO_BROADCAST_HANDLER;")
+        _ = jsc?.evaluateScript("var window = {};")
         _ = jsc?.evaluateScript("var console = {log: function(...args){NeutrinoConsole.log(args)}}")
         jsc?.setObject(sendMessage, forKeyedSubscript: "__NEUTRINO_SEND_MESSAGE" as NSString)
         

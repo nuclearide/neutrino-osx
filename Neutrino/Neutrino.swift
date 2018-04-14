@@ -5,7 +5,7 @@ import WebKit
 class NeutrinoModule {
     var map: Dictionary<String, (NeutrinoMessage) -> String> = Dictionary()
     func onMessage(_ message: NeutrinoMessage, _ context: JSContext) {
-        context.evaluateScript("__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
+        context.evaluateScript("window.__NEUTRINO_MESSAGE_HANDLER(\(map[message["method"] as! String]!(message)))")
     }
     
     func onMessage(_ message: NeutrinoMessage, _ context: WKWebView) {

@@ -17,7 +17,7 @@ class App: NeutrinoModule {
     func broadcast(_ message: NeutrinoMessage) -> String {
         let newMessage = message["arguments"] as Any
         do {
-            _ = jsc?.evaluateScript("__NEUTRINO_BROADCAST_HANDLER(\(String(data: try JSONSerialization.data(withJSONObject: newMessage, options: []), encoding: .utf8)!))");
+            _ = jsc?.evaluateScript("window.__NEUTRINO_BROADCAST_HANDLER(\(String(data: try JSONSerialization.data(withJSONObject: newMessage, options: []), encoding: .utf8)!))");
             NSApplication.shared.windows.forEach { (window) in
                 do {
                     if(type(of: window) == NSWindow.self) {

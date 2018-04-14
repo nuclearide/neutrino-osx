@@ -272,11 +272,12 @@
 		88286F97206FD431003E7ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H33556F7CD;
-				INFOPLIST_FILE = "$(SRCROOT)/Neutrino2/Info.plist";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Neutrino/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Neutrino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -284,11 +285,12 @@
 		88286F98206FD431003E7ACD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H33556F7CD;
-				INFOPLIST_FILE = "$(SRCROOT)/Neutrino2/Info.plist";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Neutrino/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Neutrino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

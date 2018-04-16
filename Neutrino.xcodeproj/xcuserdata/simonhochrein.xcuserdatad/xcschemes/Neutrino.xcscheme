@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/simonhochrein/Documents/neutrino-test/dist/index.js"
+            argument = "/Users/simonhochrein/Documents/GitHub/nuclear/dist/nuclear.js"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

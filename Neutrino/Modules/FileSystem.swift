@@ -35,8 +35,8 @@ class FileSystem: NeutrinoModule {
             return Response(message["seq"] as! Int, [try String(contentsOfFile: (path?.absoluteString)!, encoding: .utf8)])
         } catch {
             print(error)
+            return Response(message["seq"] as! Int, [nil, "Error"])
         }
-        return Response(message["seq"] as! Int, [nil, "Error"])
     }
     
     func readdir(_ message: NeutrinoMessage) -> String{
